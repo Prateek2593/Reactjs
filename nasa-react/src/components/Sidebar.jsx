@@ -1,17 +1,16 @@
 import React from "react";
 
-export default function (props) {
-    const {handleToggleModal} = props
+export default function Sidebar (props) {
+    const {handleToggleModal, data} = props
   return (
     <div className="sidebar">
       <div onClick={handleToggleModal} className="bgOverlay"></div>
       <div className="sidebarContents">
-        <h2>The Brutal Martian Landscape</h2>
-        <div>
-          <p>Description</p>
+        <h2>{data?.title}</h2>
+        <div className="descriptionContainer">
+          <p className="descriptionTitle">{data?.date}</p>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel,
-            deleniti.
+            {data?.explanation}
           </p>
         </div>
         <button onClick={handleToggleModal}>
